@@ -1,0 +1,28 @@
+# Project: projectA
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = projectA.o
+LINKOBJ  = projectA.o
+LIBS     = 
+INCS     = 
+CXXINCS  = 
+BIN      = projectA.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+projectA.o: projectA.c
+	$(CC) -c projectA.c -o projectA.o $(CFLAGS)
